@@ -20,4 +20,6 @@ project.lock.json
 /data
 .secrets
 appsettings.json
-local.settings.json
+
+# this was explicitly commented out to make the local debugging experience more simple
+# local.settings.json
