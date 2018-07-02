@@ -10,5 +10,11 @@
             "name": "Launch Web",
             "program": "${workspaceFolder}/src/web/app"
         }
-    ]
+    ],
+    "compounds": [
+        { 
+            "name": "Hybrid",
+            "configurations": ["Launch Web", "Attach to JavaScript Functions"]
+        }
+    ]    
 }
