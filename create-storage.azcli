@@ -1,0 +1,6 @@
+export ResourceGroup=ReadyDemo
+export StorageAccountName=readyvscodedemostorage
+
+az group create --name $ResourceGroup
+
+# add the line of code to create a new storage account here 
