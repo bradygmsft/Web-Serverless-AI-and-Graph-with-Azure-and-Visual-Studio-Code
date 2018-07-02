@@ -1,0 +1,13 @@
+{
+  "name": "imagereceivedtrigger",
+  "description": "Image Analysis using Cognitive Services Computer Vision API",
+  "version": "0.0.1",
+  "dependencies": {
+    "dotenv": "^5.0.0",
+    "request": "^2.87.0"
+  },
+  "engines": {
+    "node": ">= 7.6"
+  },
+  "license": "MIT"
+}
