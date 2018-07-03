@@ -1,18 +1,44 @@
 # have them execute this within the cloud shell inside of VS Code
-export ResourceGroup=yourResourceGroupName
-export StorageAccountName=alllowercase0rnumb3rs
-export ComputerVisionAccountName=democomputervision
-export CosmosDbName=ready2018vscodeazure
+export ResourceGroup=anything
+export StorageAccountName=adsfsghgfhgs
+export ComputerVisionAccountName=sfgghsgfhgs
+export CosmosDbName=shshsdfgfg
 export DbAndCollectionName=ImageData
 export Region=westus
 
+# resource group
 az group create --name $ResourceGroup --location $Region
 
-az storage account create --name $StorageAccountName --resource-group $ResourceGroup
-
-az cognitiveservices account create --yes --location $Region --kind ComputerVision --resource-group $ResourceGroup --name $ComputerVisionAccountName --sku F0
-
+# cosmos db
 az cosmosdb create --name $CosmosDbName --resource-group $ResourceGroup --capabilities EnableGremlin --max-interval 10 --max-staleness-prefix 200
-az resource tag --name $CosmosDbName --resource-group $ResourceGroup --tags defaultExperience=Graph
+az resource tag --name $CosmosDbName --resource-group $ResourceGroup --tags defaultExperience=Graph --resource-type "Microsoft.DocumentDB/databaseAccounts"
 az cosmosdb database create --name $CosmosDbName --resource-group $ResourceGroup --db-name $DbAndCollectionName
 az cosmosdb collection create --name $CosmosDbName --resource-group $ResourceGroup --db-name $DbAndCollectionName --collection-name $DbAndCollectionName
+
+# storage
+az storage account create --name $StorageAccountName --resource-group $ResourceGroup
+
+# cognitive
+az cognitiveservices account create --yes --location $Region --kind ComputerVision --resource-group $ResourceGroup --name $ComputerVisionAccountName --sku F0
+
+# make configuration easier
+export empty=""
+export CognitiveUri=$(az cognitiveservices account show --name $ComputerVisionAccountName --resource-group $ResourceGroup --query endpoint)
+export CognitiveKey=$(az cognitiveservices account keys list --name $ComputerVisionAccountName --resource-group $ResourceGroup --query key1)
+export GremlinUri=$(az resource show --api-version 2015-04-08 --name $CosmosDbName --resource-group $ResourceGroup --resource-type "Microsoft.DocumentDB/databaseAccounts" --query properties.gremlinEndpoint)
+export CosmosDbKey=$(az cosmosdb list-keys --name $CosmosDbName --resource-group $ResourceGroup --query primaryMasterKey)
+GremlinUri="${GremlinUri/:443\//$empty}"
+GremlinUri="${GremlinUri/https\:\/\//$empty}"
+
+clear
+
+echo    "
+=============================================== ==========================================================
+Environment Variables                           Values
+=============================================== ==========================================================
+COGNITIVE_SERVICES_COMPUTER_VISION_URL_BASE     $CognitiveUri
+COGNITIVE_SERVICES_COMPUTER_VISION_KEY          $CognitiveKey
+GREMLIN_ENDPOINT                                $GremlinUri
+COSMOSDB_KEY                                    $CosmosDbKey
+=============================================== ==========================================================
+" 
