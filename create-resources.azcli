@@ -1,8 +1,8 @@
 # have them execute this within the cloud shell inside of VS Code
-export ResourceGroup=anything
-export StorageAccountName=adsfsghgfhgs
-export ComputerVisionAccountName=sfgghsgfhgs
-export CosmosDbName=shshsdfgfg
+export ResourceGroup=hdgfjk
+export StorageAccountName=hjkhkghjkdgfj
+export ComputerVisionAccountName=dfghfhhjgh
+export CosmosDbName=fjgcjkfhgfhkhgfkjhg
 export DbAndCollectionName=ImageData
 export Region=westus
 
@@ -21,7 +21,7 @@ az storage account create --name $StorageAccountName --resource-group $ResourceG
 # cognitive
 az cognitiveservices account create --yes --location $Region --kind ComputerVision --resource-group $ResourceGroup --name $ComputerVisionAccountName --sku F0
 
-# make configuration easier
+# make configuration easier in the next step
 export empty=""
 export CognitiveUri=$(az cognitiveservices account show --name $ComputerVisionAccountName --resource-group $ResourceGroup --query endpoint)
 export CognitiveKey=$(az cognitiveservices account keys list --name $ComputerVisionAccountName --resource-group $ResourceGroup --query key1)
@@ -29,9 +29,7 @@ export GremlinUri=$(az resource show --api-version 2015-04-08 --name $CosmosDbNa
 export CosmosDbKey=$(az cosmosdb list-keys --name $CosmosDbName --resource-group $ResourceGroup --query primaryMasterKey)
 GremlinUri="${GremlinUri/:443\//$empty}"
 GremlinUri="${GremlinUri/https\:\/\//$empty}"
-
 clear
-
 echo    "
 =============================================== ==========================================================
 Environment Variables                           Values
