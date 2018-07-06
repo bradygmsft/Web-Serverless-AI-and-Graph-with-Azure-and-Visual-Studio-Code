@@ -1,7 +1,13 @@
 {
     "IsEncrypted": false,
     "Values": {
-      "AzureWebJobsStorage": "<replace with your storage account connection string>"
+      "AzureWebJobsStorage": "<replace with your storage account connection string>",
+      "COGNITIVE_SERVICES_COMPUTER_VISION_KEY" : "<replace with your cognitive services key>",
+      "COGNITIVE_SERVICES_COMPUTER_VISION_URL_BASE" : "<replace with your cognitive services url base>",
+      "GREMLIN_ENDPOINT" : "<replace with your cosmos db gremlin endpoint>",
+      "COSMOSDB_KEY" : "<replace with your cosmos db key>",
+      "COSMOSDB_DATABASE" : "ImageData",
+      "COSMOSDB_COLLECTION" : "ImageData"
     }
   }
   

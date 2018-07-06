@@ -1,8 +1,9 @@
 # have them execute this within the cloud shell inside of VS Code
-export ResourceGroup=hdgfjk
-export StorageAccountName=hjkhkghjkdgfj
-export ComputerVisionAccountName=dfghfhhjgh
-export CosmosDbName=fjgcjkfhgfhkhgfkjhg
+export ResourceGroup=fsdgdfd
+export StorageAccountName=dfgsdg
+export ComputerVisionAccountName=sdfgsdfas
+export CosmosDbName=affadgg
+export RegistryName=adgsgag
 export DbAndCollectionName=ImageData
 export Region=westus
 
@@ -20,6 +21,9 @@ az storage account create --name $StorageAccountName --resource-group $ResourceG
 
 # cognitive
 az cognitiveservices account create --yes --location $Region --kind ComputerVision --resource-group $ResourceGroup --name $ComputerVisionAccountName --sku F0
+
+# container registry
+az acr create --name $RegistryName --resource-group $ResourceGroup --sku Basic --admin-enabled true
 
 # make configuration easier in the next step
 export empty=""

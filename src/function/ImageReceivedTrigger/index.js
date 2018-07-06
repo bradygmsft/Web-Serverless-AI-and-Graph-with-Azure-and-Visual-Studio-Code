@@ -101,10 +101,6 @@ const addCaptionToImage = (gremlinUser, baseImageName, captionId) => {
 };
 
 module.exports = function (context, myBlob) {
-    if (process.env.NODE_ENV !== 'production') {
-        require('dotenv').load();
-    }
-
     context.log('getting image ' + context.bindingData.uri);
     context.done();
 
