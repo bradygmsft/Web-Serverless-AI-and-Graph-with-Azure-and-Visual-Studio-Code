@@ -7,7 +7,8 @@
       "GREMLIN_ENDPOINT" : "<replace with your cosmos db gremlin endpoint>",
       "COSMOSDB_KEY" : "<replace with your cosmos db key>",
       "COSMOSDB_DATABASE" : "ImageData",
-      "COSMOSDB_COLLECTION" : "ImageData"
+      "COSMOSDB_COLLECTION" : "ImageData",
+      "WEBSITE_NODE_DEFAULT_VERSION" : "8.9.4"
     }
   }
   
