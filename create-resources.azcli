@@ -1,11 +1,11 @@
 # have them execute this within the cloud shell inside of VS Code
-export ResourceGroup=fsdgdfd
-export StorageAccountName=dfgsdg
-export ComputerVisionAccountName=sdfgsdfas
-export CosmosDbName=affadgg
-export RegistryName=adgsgag
-export DbAndCollectionName=ImageData
+export ResourceGroup=AzureAndVisualStudioCodeLab
+export StorageAccountName=sggfhghdgfhsdf
+export ComputerVisionAccountName=sfgfhshgfhg
+export CosmosDbName=ghfkjhkhdhfdkj
+export RegistryName=klghjghsfjhfj
 export Region=westus
+export DbAndCollectionName=ImageData
 
 # resource group
 az group create --name $ResourceGroup --location $Region
