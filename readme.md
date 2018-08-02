@@ -40,3 +40,7 @@
 ## Configuration
 
 Once the resources have been created, you need to configure the app using Visual Studio Code's Azure features. The files `.env` and `function\host.settings.json` according to the bash script output and by using the Storage extension in Visual Studio Code. 
+
+The screen shot below shows how values would be copied from the terminal window once the script finishes running into the connfiguration file for the Azure Function. 
+
+![Configuring](media/script-ended.png)
