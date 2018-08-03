@@ -2,10 +2,10 @@
     "IsEncrypted": false,
     "Values": {
       "AzureWebJobsStorage": "<replace with your storage account connection string>",
-      "COGNITIVE_SERVICES_COMPUTER_VISION_KEY" : "a8599c0cdde94f078be3740f793158f3",
-      "COGNITIVE_SERVICES_COMPUTER_VISION_URL_BASE" : "https://westus.api.cognitive.microsoft.com/vision/v1.0",
-      "GREMLIN_ENDPOINT" : "ghfkjhkhdhfdkj.gremlin.cosmosdb.azure.com",
-      "COSMOSDB_KEY" : "gha2ct6g4UlEl89BnfGEgxeRx2xtimexyV1cOVLALgvbZvyhUxtfWvXDwkI78EcCZXjZQS8iguTzxWge6QnPyQ==",
+      "COGNITIVE_SERVICES_COMPUTER_VISION_KEY" : "<replace with your cognitive services vision key>",
+      "COGNITIVE_SERVICES_COMPUTER_VISION_URL_BASE" : "<replace with your cognitive services vision URL base>",
+      "GREMLIN_ENDPOINT" : "<replace with your gremlin endpoint>",
+      "COSMOSDB_KEY" : "<replace with your cosmos db key>",
       "COSMOSDB_DATABASE" : "ImageData",
       "COSMOSDB_COLLECTION" : "ImageData",
       "WEBSITE_NODE_DEFAULT_VERSION" : "8.9.4"
